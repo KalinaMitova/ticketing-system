@@ -1,0 +1,41 @@
+﻿@model IList<TicketingSystem.Web.ViewModels.Home.TicketViewModel>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+    @{int tiketsRow = Model.Count / 3 == 0 ? Model.Count : Model.Count / 3; }
+    @{int numberOfTickets = Model.Count(); }
+
+
+    @for (int i = 0; i <= tiketsRow; i++)
+    {
+        <div class="row" >
+
+             @for (int col = 0; col <  3; col++)
+             {
+                 int currentTicketIndex = 3 * i + col;
+                
+                 if (currentTicketIndex > numberOfTickets - 1)
+                 {
+                     continue;
+                 }
+
+            <div class="col-md-4">
+                <h2 style=" word-wrap: break-word">@Model[currentTicketIndex].TicketTitle</h2>
+                <div>
+                    <strong>Category:</strong>@Model[currentTicketIndex].CategoryName
+                </div>
+                <div>
+                    <strong>Author:</strong>@Model[currentTicketIndex].AuthorUserName
+                </div>
+                <div>
+                    @Model[currentTicketIndex].NumberOfComments  Comment(s)
+                </div>
+                <a href="/Tickets/Details/@Model[currentTicketIndex].Id" class="btn btn-default">More Details...</a>
+
+                </div>
+             }
+
+            </div>
+    }
+

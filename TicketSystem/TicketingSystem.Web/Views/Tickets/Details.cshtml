@@ -1,0 +1,37 @@
+﻿@model TicketingSystem.Web.ViewModels.Tickets.TicketDetailsViewModel
+@{
+    ViewBag.Title = "Ticket Details " + Model.Title;
+}
+
+<h2>@Model.Title</h2>
+<h3>@Model.CategoryName</h3>
+
+<div class="row">
+    <div class="col-md-4">
+        <div>
+            <strong>Author: </strong>@Model.AuthorName
+        </div>
+        <div>
+            <strong>Priority: </strong>@Model.Priority
+        </div>
+    </div>
+    <div class="col-md-4">
+        @if (Model.ImageId != null)
+        {
+            <img src="@Url.Action("Image", "Tickets", new { id = Model.ImageId.Value})" alt="@Model.Title" class="img-responsive" height="1000" width="420" />
+        }
+    </div>
+    <div class="col-md-4" style="word-wrap : break-word">
+        <strong>Description: </strong>@Model.Description
+    </div>  
+</div>
+
+@foreach (var comment in Model.Comments)
+{
+    <div class="row" style="word-wrap : break-word">
+        <strong>@comment.AuthorName: </strong>@comment.Content
+    </div><br />
+}
+
+
+
