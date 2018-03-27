@@ -16,7 +16,7 @@
 
         public void CreateMappings(IMapperConfigurationExpression config)
         {
-            config.CreateMap<Ticket, TicketDetailsViewModel>()
+            config.CreateMap<Comment, CommentViewModel>()
                 .ForMember(m => m.AuthorName, opt => opt.MapFrom(t => t.Author.UserName))
                 .ReverseMap();
         }

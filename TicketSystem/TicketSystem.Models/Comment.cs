@@ -3,6 +3,7 @@ namespace TicketingSystem.Models
 {
     using System.ComponentModel.DataAnnotations;
 
+
     public class Comment
     {
         [Key]
