@@ -21,8 +21,9 @@ namespace TicketingSystem.Web
 
         private static void RegisterContentBundles(BundleCollection bundles)
         {
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                     "~/Content/bootstrap.css"));
+            bundles.Add(new StyleBundle("~/Content/css").Include(                   
+                     "~/Content/bootstrap.css",
+                     "~/content/bootstrap-table.min.css"));
 
             bundles.Add(new StyleBundle("~/Content/kendo").Include(
                "~/Content/kendo/kendo.common.min.css", 
@@ -50,6 +51,7 @@ namespace TicketingSystem.Web
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
+                      "~/scripts/bootstrap-table/bootstrap-table.min.js",
                       "~/Scripts/respond.js"));        
         }
     }

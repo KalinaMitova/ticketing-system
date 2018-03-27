@@ -19,5 +19,7 @@ namespace TicketingSystem.Web.Infrastructure.Services.Contracts
 
         void AddTicketToDB(AddTicketViewModel ticket);
 
+        IList<ListTicketViewModel> GetAllTickets();
+
     }
 }

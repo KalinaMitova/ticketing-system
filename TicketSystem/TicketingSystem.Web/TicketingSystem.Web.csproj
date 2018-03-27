@@ -227,7 +227,7 @@
     <Compile Include="App_Start\AutoMapperConfig.cs" />
     <Compile Include="Infrastructure\Mapping\IHaveCustomMappings.cs" />
     <Compile Include="Infrastructure\Mapping\IMapFrom.cs" />
-    <Compile Include="Infrastructure\Security\Encryption.cs" />
+    <Compile Include="Infrastructure\Validation\DoesNotContainAtribute.cs" />
     <Compile Include="Infrastructure\Services\Base\BaseServices.cs" />
     <Compile Include="Infrastructure\Services\DetailsServices.cs" />
     <Compile Include="Infrastructure\Services\HomeServices.cs" />
@@ -241,6 +241,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\Tickets\AddTicketViewModel.cs" />
     <Compile Include="ViewModels\Tickets\CommentViewModel.cs" />
+    <Compile Include="ViewModels\Tickets\ListTicketViewModel.cs" />
     <Compile Include="ViewModels\Tickets\TicketDetailsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -834,7 +835,9 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -989,6 +992,7 @@
     <Content Include="Views\Shared\EditorTemplates\SingleLineText.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\MultiLineText.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Enum.cshtml" />
+    <Content Include="Views\Tickets\All.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

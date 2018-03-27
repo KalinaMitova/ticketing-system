@@ -22,6 +22,15 @@ namespace TicketingSystem.Web.Infrastructure.Services
         {
         }
 
+        public IList<ListTicketViewModel> GetAllTickets()
+        {
+            return this.Data
+               .Tickets
+               .All()
+               .ProjectTo<ListTicketViewModel>()
+               .ToList(); ;
+        }
+
         public TicketDetailsViewModel GetTicketDetailsView(int id)
         {
            var ticket = this.Data.Tickets
@@ -77,17 +86,17 @@ namespace TicketingSystem.Web.Infrastructure.Services
         {
             var dbTicket = Mapper.Map<Ticket>(ticket);
 
-            if (ticket.UplaodedImage != null)
+            if (ticket.UploadedImage != null)
             {
                 using (var memory = new MemoryStream())
                 {
-                    ticket.UplaodedImage.InputStream.CopyTo(memory);
+                    ticket.UploadedImage.InputStream.CopyTo(memory);
                     var content = memory.GetBuffer();
 
                     dbTicket.Image = new Image
                     {
                         Content = content,
-                        FileExtension = ticket.UplaodedImage.FileName.Split('.')[1]
+                        FileExtension = ticket.UploadedImage.FileName.Split('.')[1]
                     };
                 };
             }

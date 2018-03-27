@@ -8,6 +8,7 @@
 
     using TicketingSystem.Models;
     using TicketingSystem.Web.Infrastructure.Mapping;
+    using TicketingSystem.Web.Infrastructure.Security;
 
     public class AddTicketViewModel : IMapFrom<Ticket>
     {
@@ -15,6 +16,7 @@
         [DefaultValue(PrioriryType.Medium)]
         public PrioriryType Priority { get; set; }
 
+        [DoesNotContainAtribute("bug")]
         [Required]
         [StringLength(50)]
         [UIHint("SingleLineText")]
@@ -30,7 +32,7 @@
 
         public IEnumerable<SelectListItem> Categories { get; set; }
 
-        public HttpPostedFileBase UplaodedImage { get; set; }
+        public HttpPostedFileBase UploadedImage { get; set; }
 
 
     }

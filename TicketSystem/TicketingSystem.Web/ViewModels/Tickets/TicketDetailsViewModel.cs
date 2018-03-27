@@ -12,7 +12,6 @@ namespace TicketingSystem.Web.ViewModels.Tickets
     {
         public int Id { get; set; }
 
- 
         public PrioriryType Priority { get; set; }
 
         public string Title { get; set; }

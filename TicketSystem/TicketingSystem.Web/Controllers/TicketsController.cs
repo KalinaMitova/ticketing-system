@@ -21,6 +21,12 @@
         }
 
         [Authorize]
+        public ActionResult All()
+        {
+            return View(this.detailsServices.GetAllTickets());
+        }
+
+        [Authorize]
         public ActionResult Add()
         {
             var AddTicketsViewModel = this.detailsServices.CreateNewTicket();

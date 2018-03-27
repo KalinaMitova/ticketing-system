@@ -7,7 +7,6 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/modernizr")
-    @Styles.Render("~/Content/kendo")
     @RenderSection("styles", required: false)
     @Styles.Render("~/Content/custom")
 
@@ -38,24 +37,18 @@
     </div>
     <div class="container body-content">
 
-            <h1>Ticketing System</h1>
+        <h1>Ticketing System</h1>
 
-            @RenderBody()
-            <hr />
-            <footer class="text-center">
-                <p>&copy; @DateTime.Now.Year - Ticketing System</p>
-            </footer>
-        </div>
+        @RenderBody()
+        <hr />
+        <footer class="text-center">
+            <p>&copy; @DateTime.Now.Year - Ticketing System</p>
+        </footer>
+    </div>
 
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")
-        @Scripts.Render("~/bundles/kendo")
-        @RenderSection("scripts", required: false)
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 
-        <script>
-            $(function () {
-                $('#menu').kendoMenu();
-            })
-        </script>
 </body>
 </html>
