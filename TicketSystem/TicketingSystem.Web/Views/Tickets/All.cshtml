@@ -1,0 +1,46 @@
+﻿@model IList<TicketingSystem.Web.ViewModels.Tickets.ListTicketViewModel>
+@{
+    ViewBag.Title = "All";
+}
+
+<h2>All</h2>
+
+<table id="table-all-tickets" , class="table table-hover table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Category</th>
+            <th scope="col">Author</th>
+            <th scope="col">Priority</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ticket in Model)
+        {
+            <tr>
+                <td>@ticket.TicketTitle</td>
+                <td>@ticket.CategoryName</td>
+                <td>@ticket.AuthorName</td>
+                <td>@ticket.Priority</td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+@section scripts{
+    @Scripts.Render("~/bundles/bootstrap")
+    <script>
+        $('#table-all-tickets').bootstrapTable({
+            cache: true,
+            height: 400,
+            striped: true,
+            pagination: true,
+            pageSize: 5, //specify 5 here
+            pageList: [5, 10, 25, 'ALL']//list can be specified here
+        });
+    </script>
+}
+
+
+
