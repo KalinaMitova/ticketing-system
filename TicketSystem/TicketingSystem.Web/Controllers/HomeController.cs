@@ -23,7 +23,7 @@ namespace TicketingSystem.Web.Controllers
             this.homeServices = homeServices;
         }
 
-        [OutputCache(Duration = 60 * 60)]
+        //[OutputCache(Duration = 60 * 60)]
         public ActionResult Index()
         {
             var ticketVM = this.homeServices.GetIndexViewModel(4);

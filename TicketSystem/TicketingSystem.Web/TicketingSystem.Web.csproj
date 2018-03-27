@@ -49,6 +49,9 @@
     <Reference Include="AutoMapper, Version=6.2.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.6.2.2\lib\net45\AutoMapper.dll</HintPath>
     </Reference>
+    <Reference Include="BootstrapTable, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\bootstrap-table.mvc.1.1.1\lib\net452\BootstrapTable.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -245,6 +248,10 @@
     <Compile Include="ViewModels\Tickets\TicketDetailsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-table.css" />
+    <Content Include="Content\bootstrap-table.min.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\kendo\Black\editor.png" />
@@ -665,6 +672,42 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Libraries\Kendo.Mvc.dll" />
+    <Content Include="Scripts\bootstrap-table\bootstrap-table.js" />
+    <Content Include="Scripts\bootstrap-table\bootstrap-table.min.js" />
+    <Content Include="Scripts\bootstrap-table\extensions\editable\bootstrap-table-editable.min.js" />
+    <Content Include="Scripts\bootstrap-table\extensions\export\bootstrap-table-export.min.js" />
+    <Content Include="Scripts\bootstrap-table\extensions\filter\bootstrap-table-filter.min.js" />
+    <Content Include="Scripts\bootstrap-table\extensions\flatJSON\bootstrap-table-flatJSON.min.js" />
+    <Content Include="Scripts\bootstrap-table\locale\bootstrap-table-cs-CZ.min.js" />
+    <Content Include="Scripts\bootstrap-table\locale\bootstrap-table-da-DK.min.js" />
+    <Content Include="Scripts\bootstrap-table\locale\bootstrap-table-de-DE.min.js" />
+    <Content Include="Scripts\bootstrap-table\locale\bootstrap-table-el-GR.min.js" />
+    <Content Include="Scripts\bootstrap-table\locale\bootstrap-table-en-US.min.js" />
+    <Content Include="Scripts\bootstrap-table\locale\bootstrap-table-es-AR.min.js" />
+    <Content Include="Scripts\bootstrap-table\locale\bootstrap-table-es-CR.min.js" />
+    <Content Include="Scripts\bootstrap-table\locale\bootstrap-table-es-NI.min.js" />
+    <Content Include="Scripts\bootstrap-table\locale\bootstrap-table-fr-BE.min.js" />
+    <Content Include="Scripts\bootstrap-table\locale\bootstrap-table-fr-FR.min.js" />
+    <Content Include="Scripts\bootstrap-table\locale\bootstrap-table-hu-HU.min.js" />
+    <Content Include="Scripts\bootstrap-table\locale\bootstrap-table-it-IT.min.js" />
+    <Content Include="Scripts\bootstrap-table\locale\bootstrap-table-ja-JP.min.js" />
+    <Content Include="Scripts\bootstrap-table\locale\bootstrap-table-ko-KR.min.js" />
+    <Content Include="Scripts\bootstrap-table\locale\bootstrap-table-ms-MY.min.js" />
+    <Content Include="Scripts\bootstrap-table\locale\bootstrap-table-nb-NO.min.js" />
+    <Content Include="Scripts\bootstrap-table\locale\bootstrap-table-nl-NL.min.js" />
+    <Content Include="Scripts\bootstrap-table\locale\bootstrap-table-pl-PL.min.js" />
+    <Content Include="Scripts\bootstrap-table\locale\bootstrap-table-pt-BR.min.js" />
+    <Content Include="Scripts\bootstrap-table\locale\bootstrap-table-pt-PT.min.js" />
+    <Content Include="Scripts\bootstrap-table\locale\bootstrap-table-ru-RU.min.js" />
+    <Content Include="Scripts\bootstrap-table\locale\bootstrap-table-sk-SK.min.js" />
+    <Content Include="Scripts\bootstrap-table\locale\bootstrap-table-sv-SE.min.js" />
+    <Content Include="Scripts\bootstrap-table\locale\bootstrap-table-th-TH.min.js" />
+    <Content Include="Scripts\bootstrap-table\locale\bootstrap-table-tr-TR.min.js" />
+    <Content Include="Scripts\bootstrap-table\locale\bootstrap-table-uk-UA.min.js" />
+    <Content Include="Scripts\bootstrap-table\locale\bootstrap-table-ur-PK.min.js" />
+    <Content Include="Scripts\bootstrap-table\locale\bootstrap-table-vi-VN.min.js" />
+    <Content Include="Scripts\bootstrap-table\locale\bootstrap-table-zh-CN.min.js" />
+    <Content Include="Scripts\bootstrap-table\locale\bootstrap-table-zh-TW.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -691,6 +734,11 @@
     <Content Include="Content\kendo\fonts\glyphs\WebComponentsIcons.woff" />
     <Content Include="Content\kendo\images\kendoui.ttf" />
     <Content Include="Content\kendo\images\kendoui.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -826,6 +874,7 @@
     <Content Include="Scripts\kendo\kendo.window.min.js" />
     <Content Include="Scripts\kendo\pako_deflate.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\npm.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Web.config" />
@@ -996,15 +1045,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

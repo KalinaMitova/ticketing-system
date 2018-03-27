@@ -5,23 +5,23 @@
 
 <h2>All</h2>
 
-<table id="table-all-tickets" , class="table table-hover table-dark">
+<table id="table-all-tickets" , class="table table-responsive table-hover table-black">
     <thead>
         <tr>
-            <th scope="col">Title</th>
-            <th scope="col">Category</th>
-            <th scope="col">Author</th>
-            <th scope="col">Priority</th>
+            <th scope="col" class="col-md-5">Title</th>
+            <th scope="col" class="col-md-4">Category</th>
+            <th scope="col" class="col-md-4">Author</th>
+            <th scope="col" class="col-md-4">Priority</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var ticket in Model)
         {
             <tr>
-                <td>@ticket.TicketTitle</td>
-                <td>@ticket.CategoryName</td>
-                <td>@ticket.AuthorName</td>
-                <td>@ticket.Priority</td>
+                <td class="col-md-6">@ticket.TicketTitle</td>
+                <td class="col-md-4">@ticket.CategoryName</td>
+                <td class="col-md-4">@ticket.AuthorName</td>
+                <td class="col-md-4">@ticket.Priority</td>
             </tr>
         }
 
@@ -29,15 +29,13 @@
 </table>
 
 @section scripts{
-    @Scripts.Render("~/bundles/bootstrap")
     <script>
         $('#table-all-tickets').bootstrapTable({
-            cache: true,
-            height: 400,
+            cache: false,
             striped: true,
             pagination: true,
-            pageSize: 5, //specify 5 here
-            pageList: [5, 10, 25, 'ALL']//list can be specified here
+            pageSize: 5,
+            pageList: [5, 10, 25, 50],                 
         });
     </script>
 }

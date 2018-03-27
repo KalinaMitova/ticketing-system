@@ -1,9 +1,7 @@
-﻿using System;
-using System.Web;
-using System.Web.Optimization;
-
-namespace TicketingSystem.Web
+﻿namespace TicketingSystem.Web
 {
+    using System.Web.Optimization;
+
     public class BundleConfig
     {
         // For more information on bundling, visit https://go.microsoft.com/fwlink/?LinkId=301862
@@ -14,21 +12,14 @@ namespace TicketingSystem.Web
             RegisterScriptBundles(bundles);
             RegisterContentBundles(bundles);
 
-            BundleTable.EnableOptimizations = false;
-
-           
+            BundleTable.EnableOptimizations = false; 
         }
 
         private static void RegisterContentBundles(BundleCollection bundles)
         {
             bundles.Add(new StyleBundle("~/Content/css").Include(                   
                      "~/Content/bootstrap.css",
-                     "~/content/bootstrap-table.min.css"));
-
-            bundles.Add(new StyleBundle("~/Content/kendo").Include(
-               "~/Content/kendo/kendo.common.min.css", 
-               "~/Content/kendo/kendo.common-bootstrap.min.css",
-               "~/Content/kendo/kendo.black.min.css"));
+                     "~/Content/bootstrap-table.min.css"));
 
             bundles.Add(new StyleBundle("~/Content/custom").Include(
                      "~/Content/site.css"));
@@ -36,10 +27,6 @@ namespace TicketingSystem.Web
 
         private static void RegisterScriptBundles(BundleCollection bundles) 
         {
-            bundles.Add(new ScriptBundle("~/bundles/kendo").Include(
-               "~/Scripts/kendo/kendo.web.min.js",
-               "~/Scripts/kendo/kendo.aspnetmvc.min.js"));
-
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                        "~/Scripts/kendo/jquery.min.js"));
 
