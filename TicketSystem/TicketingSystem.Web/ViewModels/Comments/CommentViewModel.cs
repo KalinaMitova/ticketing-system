@@ -1,5 +1,7 @@
-﻿namespace TicketingSystem.Web.ViewModels.Tickets
+﻿namespace TicketingSystem.Web.ViewModels.Comments
 {
+    using System.ComponentModel.DataAnnotations;
+
     using AutoMapper;
 
     using TicketingSystem.Models;
@@ -10,6 +12,8 @@
     {
         public int Id { get; set; }
 
+        [Required]
+        [StringLength(2000, MinimumLength = 100)]
         public string Content { get; set; }
 
         public string AuthorName { get; set; }

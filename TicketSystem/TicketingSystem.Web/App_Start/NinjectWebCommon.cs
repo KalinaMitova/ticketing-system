@@ -74,6 +74,7 @@ namespace TicketingSystem.Web.App_Start
 
             kernel.Bind<IHomeServices>().To<HomeServices>();
             kernel.Bind<IDetailsServices>().To<DetailsServices>();
+            kernel.Bind<ICommentServices>().To<CommentServices>();
         }
     }
 }

@@ -221,6 +221,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\CommentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\TicketsController.cs" />
@@ -230,6 +231,8 @@
     <Compile Include="App_Start\AutoMapperConfig.cs" />
     <Compile Include="Infrastructure\Mapping\IHaveCustomMappings.cs" />
     <Compile Include="Infrastructure\Mapping\IMapFrom.cs" />
+    <Compile Include="Infrastructure\Services\CommentServices.cs" />
+    <Compile Include="Infrastructure\Services\Contracts\ICommentServices.cs" />
     <Compile Include="Infrastructure\Validation\DoesNotContainAtribute.cs" />
     <Compile Include="Infrastructure\Services\Base\BaseServices.cs" />
     <Compile Include="Infrastructure\Services\DetailsServices.cs" />
@@ -243,8 +246,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\Tickets\AddTicketViewModel.cs" />
-    <Compile Include="ViewModels\Tickets\CommentViewModel.cs" />
+    <Compile Include="ViewModels\Comments\CommentViewModel.cs" />
     <Compile Include="ViewModels\Tickets\ListTicketViewModel.cs" />
+    <Compile Include="ViewModels\Comments\PostCommentViewModel.cs" />
     <Compile Include="ViewModels\Tickets\TicketDetailsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -743,6 +747,8 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -1042,9 +1048,12 @@
     <Content Include="Views\Shared\EditorTemplates\MultiLineText.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Enum.cshtml" />
     <Content Include="Views\Tickets\All.cshtml" />
+    <Content Include="Views\Tickets\_PostCommentPartial.cshtml" />
+    <Content Include="Views\Shared\_CommentPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Comments\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

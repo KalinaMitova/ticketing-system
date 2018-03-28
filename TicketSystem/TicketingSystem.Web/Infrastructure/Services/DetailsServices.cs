@@ -10,6 +10,7 @@ namespace TicketingSystem.Web.Infrastructure.Services
     using TicketingSystem.Web.Infrastructure.Services.Base;
     using TicketingSystem.Web.Infrastructure.Services.Contracts;
     using TicketingSystem.Web.ViewModels.Tickets;
+    using TicketingSystem.Web.ViewModels.Comments;
     using System.Web.Mvc;
     using System.Collections.Generic;
     using AutoMapper;
@@ -45,6 +46,7 @@ namespace TicketingSystem.Web.Infrastructure.Services
                .Comments
                .All()
                .Where(c => c.TicketId == ticket.Id)
+               .OrderByDescending(c => c.Id)
                .ProjectTo<CommentViewModel>()
                .ToList();
             }

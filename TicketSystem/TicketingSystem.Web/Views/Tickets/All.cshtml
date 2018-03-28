@@ -3,8 +3,6 @@
     ViewBag.Title = "All";
 }
 
-<h2>All</h2>
-
 <table id="table-all-tickets" , class="table table-responsive table-hover table-black">
     <thead>
         <tr>
@@ -18,7 +16,7 @@
         @foreach (var ticket in Model)
         {
             <tr>
-                <td class="col-md-6">@ticket.TicketTitle</td>
+                <td class="col-md-6"><a href="/Tickets/Details/@ticket.Id">@ticket.TicketTitle</a> </td>
                 <td class="col-md-4">@ticket.CategoryName</td>
                 <td class="col-md-4">@ticket.AuthorName</td>
                 <td class="col-md-4">@ticket.Priority</td>
@@ -35,7 +33,7 @@
             striped: true,
             pagination: true,
             pageSize: 5,
-            pageList: [5, 10, 25, 50],                 
+            pageList: [5, 10, 25, 50],
         });
     </script>
 }

@@ -7,6 +7,7 @@ namespace TicketingSystem.Web.ViewModels.Tickets
 
     using TicketingSystem.Models;
     using TicketingSystem.Web.Infrastructure.Mapping;
+    using TicketingSystem.Web.ViewModels.Comments;
 
     public class TicketDetailsViewModel : IMapFrom<Ticket>, IHaveCustomMappings
     {

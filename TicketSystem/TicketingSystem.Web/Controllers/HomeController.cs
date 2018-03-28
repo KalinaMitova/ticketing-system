@@ -1,17 +1,9 @@
-﻿
-
-
-namespace TicketingSystem.Web.Controllers
-{
-    using System.Linq;
+﻿namespace TicketingSystem.Web.Controllers
+{ 
     using System.Web.Mvc;
 
-    using AutoMapper.QueryableExtensions;
-
     using TicketingSystem.Data.Contracts;
-    using TicketingSystem.Web.Infrastructure.Services;
     using TicketingSystem.Web.Infrastructure.Services.Contracts;
-    using TicketingSystem.Web.ViewModels.Home;
 
     public class HomeController : BaseController
     {
