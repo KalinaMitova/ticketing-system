@@ -1,42 +1,44 @@
-﻿@model IList<TicketingSystem.Web.ViewModels.Tickets.ListTicketViewModel>
+﻿
+@model IList<TicketingSystem.Web.ViewModels.Tickets.ListTicketViewModel>
+
 @{
     ViewBag.Title = "All";
 }
 
-<table id="table-all-tickets" , class="table table-responsive table-hover table-black">
-    <thead>
-        <tr>
-            <th scope="col" class="col-md-5">Title</th>
-            <th scope="col" class="col-md-4">Category</th>
-            <th scope="col" class="col-md-4">Author</th>
-            <th scope="col" class="col-md-4">Priority</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var ticket in Model)
-        {
+    <table id="table-all-tickets" , class="table table-responsive table-hover table-black">
+        <thead>
             <tr>
-                <td class="col-md-6"><a href="/Tickets/Details/@ticket.Id">@ticket.TicketTitle</a> </td>
-                <td class="col-md-4">@ticket.CategoryName</td>
-                <td class="col-md-4">@ticket.AuthorName</td>
-                <td class="col-md-4">@ticket.Priority</td>
+                <th scope="col" class="col-md-5">Title</th>
+                <th scope="col" class="col-md-4">Category</th>
+                <th scope="col" class="col-md-4">Author</th>
+                <th scope="col" class="col-md-4">Priority</th>
             </tr>
-        }
+        </thead>
+        <tbody>
+            @foreach (var ticket in Model)
+            {
+                <tr>
+                    <td class="col-md-6"><a href="/Tickets/Details/@ticket.Id">@ticket.TicketTitle</a> </td>
+                    <td class="col-md-4">@ticket.CategoryName</td>
+                    <td class="col-md-4">@ticket.AuthorName</td>
+                    <td class="col-md-4">@ticket.Priority</td>
+                </tr>
+            }
 
-    </tbody>
-</table>
+        </tbody>
+    </table>
 
-@section scripts{
-    <script>
-        $('#table-all-tickets').bootstrapTable({
-            cache: false,
-            striped: true,
-            pagination: true,
-            pageSize: 5,
-            pageList: [5, 10, 25, 50],
-        });
-    </script>
-}
+    @section scripts{
+        <script>
+            $('#table-all-tickets').bootstrapTable({
+                cache: false,
+                striped: true,
+                pagination: true,
+                pageSize: 5,
+                pageList: [5, 10, 25, 50],
+            });
+        </script>
+    }
 
 
 

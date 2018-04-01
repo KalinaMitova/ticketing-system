@@ -16,6 +16,6 @@
 
         void Delete(object id);
 
-        void Detach(T entity);
+        void Detach(T entity);     
     }
 }

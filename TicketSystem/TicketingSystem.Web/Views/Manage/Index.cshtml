@@ -1,4 +1,4 @@
-﻿@model TicketingSystem.Web.Models.IndexViewModel
+﻿@model TicketingSystem.Web.ViewModels.IndexViewModel
 @{
     ViewBag.Title = "Manage";
 }
@@ -15,18 +15,18 @@
             [
             @if (Model.HasPassword)
             {
-                @Html.ActionLink("Change your password", "ChangePassword")
+                @Html.ActionLink("Change your password", "ChangePassword", new { area = string.Empty }, null)
             }
             else
             {
-                @Html.ActionLink("Create", "SetPassword")
+                @Html.ActionLink("Create", "SetPassword", new { area = string.Empty }, null)
             }
             ]
         </dd>
         <dt>External Logins:</dt>
         <dd>
             @Model.Logins.Count [
-            @Html.ActionLink("Manage", "ManageLogins") ]
+            @Html.ActionLink("Manage", "ManageLogins", new { area = string.Empty }, null) ]
         </dd>
         @*
             Phone Numbers can used as a second factor of verification in a two-factor authentication system.

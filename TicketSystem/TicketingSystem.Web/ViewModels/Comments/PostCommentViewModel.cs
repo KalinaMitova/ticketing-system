@@ -22,6 +22,7 @@
         [Required]
         [StringLength(2000, MinimumLength = 100)]
         [UIHint("MultiLineText")]
+        [DataType(DataType.MultilineText)]
         public string Content { get; set; }
     }
 }

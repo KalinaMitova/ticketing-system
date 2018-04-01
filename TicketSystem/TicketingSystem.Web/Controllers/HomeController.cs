@@ -15,17 +15,22 @@
             this.homeServices = homeServices;
         }
 
-        //[OutputCache(Duration = 60 * 60)]
         public ActionResult Index()
         {
-            var ticketVM = this.homeServices.GetIndexViewModel(4);
-
-            return View(ticketVM);
+            return View();
         } 
 
         public ActionResult Error()
         {
             return View();
+        }
+
+        [ChildActionOnly]
+        [OutputCache(Duration = 60 * 60)]
+        public ActionResult MostCommentedTickets()
+        {
+            var ticketVM = this.homeServices.GetIndexViewModel(6);
+            return PartialView("_MostCommentedTicketsPartial", ticketVM);
         }
     }
 }

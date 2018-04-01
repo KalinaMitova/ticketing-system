@@ -11,6 +11,7 @@ namespace TicketingSystem.Models
 
         [Required]
         [StringLength(2000, MinimumLength = 100)]
+        [DataType(DataType.MultilineText)]
         public string Content { get; set; }
 
         public string AuthorId { get; set; }

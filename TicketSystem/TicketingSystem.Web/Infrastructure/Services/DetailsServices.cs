@@ -29,7 +29,7 @@ namespace TicketingSystem.Web.Infrastructure.Services
                .Tickets
                .All()
                .ProjectTo<ListTicketViewModel>()
-               .ToList(); ;
+               .ToList(); 
         }
 
         public TicketDetailsViewModel GetTicketDetailsView(int id)
@@ -72,6 +72,7 @@ namespace TicketingSystem.Web.Infrastructure.Services
                 })
             };
         }
+
 
         public IEnumerable<SelectListItem> GetCategories()
         {

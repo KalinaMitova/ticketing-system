@@ -14,6 +14,7 @@
 
         [Required]
         [StringLength(2000, MinimumLength = 100)]
+        [DataType(DataType.MultilineText)]
         public string Content { get; set; }
 
         public string AuthorName { get; set; }
