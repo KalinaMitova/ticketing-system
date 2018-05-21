@@ -6,12 +6,14 @@
 
 <h2>Comments</h2>
 
-<table id="table-all-comments" , class="table table-responsive table-hover table-black">
+<table id="table-all-comments", class="table table-responsive table-hover table-black"  style="table-layout: fixed; width: 100%" >
     <thead>
         <tr>
-            <th scope="col" class="col-md-4">Author</th>
-            <th scope="col" class="col-md-4">Ticket Title</th>
-            <th scope="col" class="col-md-4">Content</th>
+            <th scope="col" class="col-md-3" style="text-align:center">Author</th>
+            <th scope="col" class="col-md-3" style="text-align:center">Ticket Title</th>
+            <th scope="col" class="col-md-4" style="text-align:center">Content</th>
+
+
         </tr>
     </thead>
 
@@ -19,16 +21,16 @@
         @foreach (var comment in Model)
         {
             <tr>
-                <td class="col-md-4">
+                <td class="col-md-3">
                     @comment.AuthorName
                 </td>
-                <td class="col-md-4">
+                <td class="col-md-3" style="word-wrap:break-word">
                     @comment.TicketTitle
                 </td>
-                <td class="col-md-4" style="=word-wrap:break-all">
+                <td class="col-md-4" style="word-break:break-all">
                     @comment.Content
                 </td>
-                <td class="col-md-4">
+                <td class="col-md-2" style="text-align:justify">
                     @Html.ActionLink("Edit", "Edit", new { id = comment.Id }) |
                     @Html.ActionLink("Details", "Details", new { id = comment.Id }) |
                     @Html.ActionLink("Delete", "Delete", new { id = comment.Id })
@@ -40,7 +42,7 @@
 
 @section scripts{
     <script>
-            $('#table-all-comments').bootstrapTable({
+        $('#table-all-comments').bootstrapTable({
                 cache: false,
                 striped: true,
                 pagination: true,
